@@ -14,7 +14,7 @@ EXPORTDIR=$MOUNT_PATH
 
 mkdir -p "$EXPORTDIR"/certs
 mkdir -p /mnt/registry
-
+cp config.yml /mnt/registry/config.yml
 pushd "$EXPORTDIR"
 if [ -f /etc/docker/certs.d/master.cloud.com:5000/domain.crt ]
 then
@@ -37,8 +37,9 @@ docker run -d \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/root/certs/domain.crt \
   -e REGISTRY_HTTP_TLS_KEY=/root/certs/domain.key \
   -v /mnt/registry:/var/lib/registry \
+  -v /mnt/registry/config.yml:/etc/docker/registry/config.yml \
   -p 5000:5000 \
-  registry:2
+  registry:2.3
 
 mkdir -p /etc/docker/certs.d/master.cloud.com:5000
 
