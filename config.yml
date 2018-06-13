@@ -25,7 +25,7 @@ notifications:
   endpoints:
     - name: notifiers
       disabled: false
-      url: http://192.168.1.5:5002/event
+      url: http://11.0.0.2:5003/event
 #      headers:
 #        Accept:
 #          - application/vnd.docker.distribution.manifest.v2+json
