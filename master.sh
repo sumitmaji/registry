@@ -39,7 +39,7 @@ docker run -d \
   -v /mnt/registry:/var/lib/registry \
   -v /mnt/registry/config.yml:/etc/docker/registry/config.yml \
   -p 5000:5000 \
-  registry:2.3
+  registry:latest
 
 mkdir -p /etc/docker/certs.d/master.cloud.com:5000
 
