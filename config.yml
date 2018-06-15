@@ -24,7 +24,7 @@ health:
 notifications:
   endpoints:
     - name: notifiers
-      disabled: false
+      disabled: true
       url: http://11.0.0.2:5003/event
 #      headers:
 #        Accept:
